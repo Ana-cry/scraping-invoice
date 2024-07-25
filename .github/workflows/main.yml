@@ -1,0 +1,48 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main  # Altere para a branch que deseja monitorar
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run SSH commands
+      uses: appleboy/ssh-action@v0.1.3
+      with:
+        host: ${{ 3.147.65.247 }}
+        username: ${{ ubuntu }}
+        key: ${{ MIIEowIBAAKCAQEAlNCZsjuiKgAYOBTiEL8eQdkb70qM+EMyJscYkrdcA7RsUGM+
+rhTGXoTuzayRafnCQK/gy/0V7nNVVJ9cGdEFXPg31C4AFbKHjBON38k3ecQgK9oE
+MiIbStUQwXvigy/XJxUKkHef4WSw38t7hQVPDPKimEtHSNtyoL0aWGbEAcKCFncU
+GzIptL0qUdan/VEA9N6yQX3x+RcacW4YMKbDPLjWHSEMShg4LvK9UDiYHb7NTMA1
+CWUTNn5+HpimsWMy/gLGmiPzCyfvjBBcLb0mHMxtW2n/Mc0NudEejGoZXGk/65kz
+jNOM2KViAWR6ZPA2tsyssbc9ZbLso6X5i29iqQIDAQABAoIBAHqMtqWSel8AKPG2
+MNz9ppsvgdOznxerrpdEijX4jev3HuOsdyfAsAOSkV4K6M1PAutma0dRqkft7q17
+dstD2JjRSJiRMTytAvcV+1X5TJgYLS4vohjvAW7Eu8G6lbTXJuVmbIbAHIfu9cG2
+voey8YCGJ+QmyhNztJguYo2+Q1f2ZsIVqJGS/PQC69rdbRXqOyvGWUfb4+GcfTKm
+msKoodoha4mSSnOb8uXD0Nic7ZoiqSLQTTZJNwqoZiCQMLDw2x3uGwfIViYM8C7z
+XCvps0jDeaDd//gOBaZ1PFbFHEm0Q+tu0NfMvTr5qe+6lR0t3ouTLyJEMSJMroAx
+Ky2aQ6ECgYEAx3agHCwuwPfepM5d4TsXgbKa2BguY5++4DfJhXmUTSAAGA73h+fx
+hs5HglmVAVt3MNfjGefVr1IdOBPDt4hvjh4vVf8sIYInO8NwzVVygtIc+n+o0C7a
+xy5FDP1wwn2oVOav+86HyttRBQt62r/5ngEnuI9HiQBpjzZD6fXoOxUCgYEAvv7W
+jEgYlMBmHcblxRoEq3K3VsJnBJz7wZiAeCVvM5GJFSEnzMb74uF+3gxTqXiiAR93
+dI9WuqFNQyddzZmXEAOTYXl5K7IHHT0rkVCc1bsIiXHbFBjq8ZbGdxrK1vmxfo7/
+Jlnouuxc7OMRxuuxG3yv6r7H/cEehNwMLif/HkUCgYEArzyn07h5Zu0dfLsVPXB1
+6WtpoJo1/y50OnaopIw43z1S99AGZi8/QYjuyDU9tJCP+ahhi/vi/wFsTD0JALBs
+GXapbaseMV4wa8/7xVnhnc9MyELpo+TWLpGW9p+etjBBeD2ntNkw8eaWmpEIYTCx
+87/eDsZKObHUC47IQb7aRTUCgYBBC2qnpZnxdsCQHX98q4qxlMTJYDVTRd8bJEOE
+J0OCrWqg7oSuYYnAz4i0OEB5s6KAfWXiJTqlHm/AkfSJI2hlxMH5bTQN5Hg1xfJD
+b8+pniOfI043vvCsS+vU/iPcKHcBIdPVDMOMfRh8eCxCsVvEf6cta8GSMqWhG4tu
+YKKqfQKBgG+ukROCAZ/fnQeXLtpt3c84bHYowckaFkd60P07EB3e6U0OU/E2eZSh
+cc3kWtzuxoJLaszJKwXa0JOIbAtum6YaO8nPGxR+bhzKPonxbM67SFUUxzqSsiVW
+h17jU7Q0Gf+NGzeR+hkzRrNKGeUgyRPNAQ05ByeZJ/JfE9/0Smo+ }}
+        script: |
+          cd /
+          git pull
